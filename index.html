@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f7f4">
+  <meta name="description" content="Mark is a web developer building reliable, thoughtful digital products and modern IT solutions.">
+  <title>Mark — Web Developer & IT Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f8f7f4;
+      --white: #fff;
+      --ink: #191919;
+      --muted: #77746f;
+      --red: #e5392f;
+      --line: #dedbd5;
+      --mono: "DM Mono", monospace;
+      --sans: "Manrope", sans-serif;
+      --page: min(1240px, calc(100% - 96px));
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible { outline: 2px solid var(--red); outline-offset: 5px; }
+    .wrap { width: var(--page); margin-inline: auto; }
+    .mono { font-family: var(--mono); text-transform: uppercase; letter-spacing: .04em; }
+
+    .header { height: 78px; display: flex; align-items: center; border-bottom: 1px solid var(--line); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 700; }
+    .brand-mark { display: grid; place-items: center; width: 38px; height: 38px; color: white; background: var(--red); font-size: 13px; letter-spacing: -.04em; }
+    .brand-role { color: var(--muted); font-weight: 500; }
+    .nav { display: flex; align-items: center; gap: 36px; font-size: 13px; }
+    .nav a { transition: color .2s ease; }
+    .nav a:hover { color: var(--red); }
+    .nav .contact-link { font-weight: 800; }
+    .arrow { color: var(--red); margin-left: 5px; }
+
+    .hero { padding: 72px 0 38px; }
+    .eyebrow-row { display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-bottom: 48px; }
+    .eyebrow { display: flex; align-items: center; gap: 13px; color: var(--muted); font-size: 11px; }
+    .eyebrow::before { content: ""; width: 32px; height: 2px; background: var(--red); }
+    .availability { color: var(--ink); display: flex; align-items: center; gap: 9px; font-size: 10px; }
+    .availability::before { content: ""; width: 8px; aspect-ratio: 1; background: #55a377; border-radius: 50%; box-shadow: 0 0 0 4px #55a37720; }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 5%; align-items: center; }
+    h1 { max-width: 760px; margin: 0; font-size: clamp(48px, 6.1vw, 82px); line-height: 1.035; letter-spacing: -.065em; font-weight: 700; }
+    h1 span { color: var(--red); }
+    .hero-copy { max-width: 430px; margin: 26px 0 0; color: var(--muted); font-size: 16px; line-height: 1.8; }
+    .actions { display: flex; align-items: center; flex-wrap: wrap; gap: 25px; margin-top: 27px; font-size: 13px; font-weight: 800; }
+    .button { display: inline-flex; align-items: center; gap: 13px; padding: 15px 19px; background: var(--red); color: var(--white); transition: background .2s ease, transform .2s ease; }
+    .button:hover { background: #c92720; transform: translateY(-2px); }
+    .text-link { padding-block: 12px; }
+    .hero-art { position: relative; min-width: 0; padding: 20px 0 24px 27px; }
+    .hero-art::before { content: ""; position: absolute; width: 72px; height: 72px; border-left: 2px solid var(--red); border-top: 2px solid var(--red); top: 4px; left: 0; z-index: 1; }
+    .hero-photo { display: block; width: 100%; aspect-ratio: 1.08 / 1; object-fit: cover; filter: saturate(.78); }
+    .code-card { position: absolute; right: -16px; bottom: 0; width: min(270px, 78%); padding: 18px 20px; background: var(--ink); color: var(--white); box-shadow: 0 12px 30px #19191920; }
+    .code-card .label { display: block; color: #c4c0bb; font-size: 9px; }
+    .code-card strong { display: block; margin-top: 8px; font-size: 16px; }
+    .code-card strong span { color: #ff5d52; font-family: var(--mono); }
+    .hero-foot { display: flex; justify-content: space-between; gap: 20px; align-items: center; margin-top: 59px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+    .hero-foot p { margin: 0; }
+    .scroll-note { color: var(--ink); font-size: 10px; }
+
+    .section { padding: 100px 0; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 34px; }
+    .section-kicker { display: flex; gap: 10px; align-items: center; color: var(--muted); font-size: 10px; }
+    .section-kicker strong { color: var(--red); font-weight: 500; }
+    h2 { margin: 13px 0 0; font-size: clamp(34px, 4.4vw, 54px); line-height: 1.1; letter-spacing: -.055em; }
+    .section-intro { max-width: 360px; margin: 0 0 4px; color: var(--muted); font-size: 13px; line-height: 1.8; }
+    .projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+    .project { min-width: 0; }
+    .preview { position: relative; display: flex; justify-content: center; align-items: center; overflow: hidden; min-height: 270px; padding: 24px; background: #ece9e4; }
+    .preview::after { content: ""; position: absolute; inset: auto 0 0; height: 4px; background: var(--red); transform: scaleX(0); transform-origin: left; transition: transform .35s ease; }
+    .project:hover .preview::after { transform: scaleX(1); }
+    .preview-analytics { background: #ece9e4; }
+    .dashboard { width: min(390px, 100%); padding: 17px; background: #fff; box-shadow: 0 18px 45px #28221c16; transform: rotate(-2deg); }
+    .dash-top { display: flex; justify-content: space-between; align-items: center; padding-bottom: 13px; border-bottom: 1px solid #eee; font-size: 10px; font-weight: 800; }
+    .dash-top small { color: #8a8780; font: 9px var(--mono); }
+    .dash-body { display: grid; grid-template-columns: 1fr 1.05fr; gap: 16px; padding-top: 17px; }
+    .dash-label { display: block; color: #85817a; font-size: 8px; }
+    .dash-value { display: block; margin-top: 5px; font-size: 24px; font-weight: 800; letter-spacing: -.06em; }
+    .dash-change { display: block; margin-top: 4px; color: #418561; font: 8px var(--mono); }
+    .chart { display: flex; align-items: end; gap: 5px; height: 66px; padding-top: 7px; border-bottom: 1px solid #eee; }
+    .chart i { flex: 1; height: 35%; background: #f1aaa3; }
+    .chart i:nth-child(2) { height: 51%; }.chart i:nth-child(3) { height: 41%; }.chart i:nth-child(4) { height: 67%; }.chart i:nth-child(5) { height: 58%; }.chart i:nth-child(6) { height: 78%; }.chart i:nth-child(7) { height: 95%; background: var(--red); }
+    .dashboard-foot { display: flex; justify-content: space-between; margin-top: 12px; color: #85817a; font: 8px var(--mono); }
+    .preview-editorial { background: #f0e7db; }
+    .editorial { width: min(390px, 100%); min-height: 210px; padding: 18px 22px; background: #fbf8f1; box-shadow: 0 18px 45px #28221c16; transform: rotate(2deg); }
+    .editorial-top { display: flex; justify-content: space-between; color: #757067; font: 8px var(--mono); }
+    .editorial-rule { height: 1px; margin-top: 11px; background: #bbb3a8; }
+    .editorial h3 { max-width: 250px; margin: 23px 0 9px; font-family: Georgia, serif; font-size: 28px; line-height: 1.04; font-weight: 400; letter-spacing: -.04em; }
+    .editorial p { max-width: 245px; margin: 0; color: #777169; font: 10px/1.6 var(--sans); }
+    .editorial-link { display: inline-block; margin-top: 18px; padding-bottom: 4px; border-bottom: 1px solid var(--red); color: #292621; font: 8px var(--mono); }
+    .project-meta { display: flex; justify-content: space-between; gap: 14px; margin-top: 17px; color: var(--muted); font-size: 10px; }
+    .project h3 { margin: 12px 0 7px; font-size: 22px; letter-spacing: -.04em; }
+    .project-description { max-width: 490px; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.8; }
+    .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 14px; }
+    .tag { padding: 6px 9px; border: 1px solid var(--line); color: #55514d; font: 9px var(--mono); }
+
+    .about { background: var(--white); border-block: 1px solid var(--line); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10%; align-items: start; }
+    .about h2 { max-width: 570px; }
+    .about-copy { padding-top: 26px; }
+    .about-copy p { margin: 0 0 15px; color: var(--muted); font-size: 13px; line-height: 1.9; }
+    .about-copy strong { color: var(--ink); }
+    .skills { margin-top: 31px; border-top: 1px solid var(--line); }
+    .skill { display: flex; justify-content: space-between; gap: 20px; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 11px; }
+    .skill span:last-child { color: var(--red); font: 10px var(--mono); }
+    .stack { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .stack span { padding: 7px 10px; background: var(--paper); color: #5d5953; font: 9px var(--mono); }
+
+    .contact { padding: 86px 0; background: var(--red); color: var(--white); }
+    .contact .section-kicker, .contact .section-kicker strong { color: #ffd6d2; }
+    .contact h2 { max-width: 760px; }
+    .contact-grid { display: flex; justify-content: space-between; align-items: end; gap: 30px; }
+    .contact-copy { max-width: 550px; margin: 17px 0 0; color: #ffe5e2; font-size: 13px; line-height: 1.8; }
+    .contact-action { display: inline-flex; flex: 0 0 auto; gap: 12px; align-items: center; padding: 15px 18px; background: var(--white); color: var(--ink); font-size: 12px; font-weight: 800; transition: transform .2s ease; }
+    .contact-action:hover { transform: translateY(-2px); }
+    .contact-action span { color: var(--red); }
+    .footer { padding: 22px 0; background: var(--ink); color: #d1cfca; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; align-items: center; font-size: 10px; }
+    .footer p { margin: 0; }
+    .footer-links { display: flex; gap: 20px; }
+    .footer a:hover { color: white; }
+
+    @media (max-width: 760px) {
+      :root { --page: min(100% - 40px, 560px); }
+      .header { height: 68px; }
+      .brand { font-size: 12px; gap: 9px; }
+      .brand-mark { width: 34px; height: 34px; }
+      .nav { gap: 16px; font-size: 11px; }
+      .nav a:first-child { display: none; }
+      .hero { padding-top: 48px; }
+      .eyebrow-row { align-items: flex-start; margin-bottom: 35px; }
+      .eyebrow { font-size: 9px; }
+      .availability { max-width: 145px; font-size: 8px; line-height: 1.6; }
+      .hero-grid { grid-template-columns: 1fr; gap: 34px; }
+      h1 { max-width: 620px; font-size: clamp(45px, 12vw, 74px); }
+      .hero-copy { margin-top: 20px; font-size: 14px; }
+      .actions { gap: 16px; font-size: 11px; }
+      .button { padding: 13px 14px; }
+      .hero-art { width: min(440px, 90%); margin: 0 auto; padding-left: 20px; }
+      .hero-photo { aspect-ratio: 1.25 / 1; }
+      .code-card { right: -12px; width: 220px; padding: 14px 16px; }
+      .hero-foot { margin-top: 43px; font-size: 10px; }
+      .section { padding: 72px 0; }
+      .section-head { align-items: flex-start; flex-direction: column; gap: 13px; }
+      .section-intro { max-width: 460px; }
+      .projects { grid-template-columns: 1fr; gap: 34px; }
+      .preview { min-height: 245px; }
+      .about-grid { grid-template-columns: 1fr; gap: 10px; }
+      .about-copy { padding-top: 7px; }
+      .contact { padding: 66px 0; }
+      .contact-grid { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 420px) {
+      :root { --page: calc(100% - 32px); }
+      .brand-role { display: none; }
+      .nav { gap: 13px; }
+      .hero-foot { align-items: flex-start; }
+      .hero-foot p { max-width: 230px; line-height: 1.6; }
+      .scroll-note { text-align: right; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body id="top">
+  <a href="#main" style="position:absolute;left:-9999px;top:8px;background:#fff;padding:10px;z-index:5" onfocus="this.style.left='8px'" onblur="this.style.left='-9999px'">Skip to content</a>
+  <header class="header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="Mark, home"><span class="brand-mark">M.</span><span>Mark <span class="brand-role">— Web Developer</span></span></a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#work">Work</a><a href="#about">About</a><a class="contact-link" href="#contact">Let's talk <span class="arrow">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="eyebrow-row">
+        <div class="eyebrow mono">Independent developer · Digital systems</div>
+        <div class="availability mono">Available for select projects</div>
+      </div>
+      <div class="hero-grid">
+        <div>
+          <h1 id="hero-title">I build the web, from <span>first commit</span> to final pixel.</h1>
+          <p class="hero-copy">Thoughtful engineering for useful products. Fast, accessible, and made to hold up in the real world.</p>
+          <div class="actions">
+            <a class="button" href="#work">Explore selected work <span aria-hidden="true">↓</span></a>
+            <a class="text-link" href="#contact">Start a project <span class="arrow" aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="hero-art">
+          <img class="hero-photo" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=85" alt="Developer workspace with a laptop displaying code" fetchpriority="high">
+          <div class="code-card"><span class="label mono">Good ideas, shipped</span><strong><span>&lt;/&gt;</span> code with care</strong></div>
+        </div>
+      </div>
+      <div class="hero-foot"><p>Product thinking. Solid engineering. No mystery-meat code.</p><a class="scroll-note mono" href="#work">Scroll to explore <span class="arrow">↓</span></a></div>
+    </section>
+
+    <section class="section wrap" id="work" aria-labelledby="work-title">
+      <div class="section-head">
+        <div><div class="section-kicker mono"><strong>01 /</strong> Selected work</div><h2 id="work-title">Built for the real world.</h2></div>
+        <p class="section-intro">A few product builds where clear thinking and careful implementation made the difference.</p>
+      </div>
+      <div class="projects">
+        <article class="project">
+          <div class="preview preview-analytics" role="img" aria-label="Preview of a clean financial analytics dashboard">
+            <div class="dashboard"><div class="dash-top"><span>Northstar / Overview</span><small>LAST 30 DAYS</small></div><div class="dash-body"><div><span class="dash-label">Total revenue</span><strong class="dash-value">$84,290</strong><span class="dash-change">↗ 12.8% THIS MONTH</span></div><div><span class="dash-label">Weekly growth</span><div class="chart" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div><div class="dashboard-foot"><span>MON 01</span><span>MON 08</span><span>MON 15</span><span>MON 22</span></div></div>
+          </div>
+          <div class="project-meta mono"><span>Fintech · Web application</span><span>2025</span></div>
+          <h3>Northstar, made clearer.</h3>
+          <p class="project-description">A confident home for financial data. Turned a tangle of account activity into a fast, accessible dashboard.</p>
+          <div class="tags" aria-label="Technologies used"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Accessible UI</span></div>
+        </article>
+        <article class="project">
+          <div class="preview preview-editorial" role="img" aria-label="Preview of an editorial publishing website">
+            <div class="editorial"><div class="editorial-top"><span>Fieldnote / Journal</span><span>MENU +</span></div><div class="editorial-rule"></div><h3>Make room for the outside.</h3><p>Stories, guides and good reasons to take the long way home.</p><span class="editorial-link">READ THE LATEST STORY&nbsp; ↗</span></div>
+          </div>
+          <div class="project-meta mono"><span>Publishing · Digital platform</span><span>2024</span></div>
+          <h3>Fieldnote, in the open.</h3>
+          <p class="project-description">A flexible editorial platform that makes publishing feel simple and reading feel considered.</p>
+          <div class="tags" aria-label="Technologies used"><span class="tag">Next.js</span><span class="tag">Headless CMS</span><span class="tag">SEO</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="wrap about-grid">
+        <div><div class="section-kicker mono"><strong>02 /</strong> A bit about me</div><h2 id="about-title">Good software starts with good questions.</h2></div>
+        <div class="about-copy">
+          <p>Hey, I'm Mark, an independent <strong>web developer</strong> who likes the hard parts as much as the polished ones: a clear system, a sharp interface, and the engineering underneath.</p>
+          <p>I work with teams from early idea through launch and beyond. I care about maintainable code, accessible defaults, dependable infrastructure, and the little performance wins people can actually feel.</p>
+          <div class="skills" aria-label="Skills and services">
+            <div class="skill"><span>Frontend engineering & UI architecture</span><span>01</span></div>
+            <div class="skill"><span>Full-stack apps & API integration</span><span>02</span></div>
+            <div class="skill"><span>IT systems & cloud deployment</span><span>03</span></div>
+            <div class="skill"><span>Accessibility, testing & performance</span><span>04</span></div>
+          </div>
+          <div class="stack" aria-label="Technology stack"><span>React</span><span>Next.js</span><span>TypeScript</span><span>Node.js</span><span>HTML / CSS</span><span>Cloud & DevOps</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact-grid">
+        <div><div class="section-kicker mono"><strong>03 /</strong> Have a good one in mind?</div><h2 id="contact-title">Let's make something that works beautifully.</h2><p class="contact-copy">Have a project, a tricky technical problem, or a role in mind? Send me a note and let's get into it.</p></div>
+        <a class="contact-action" href="mailto:hello@mark.dev?subject=Let%27s%20build%20something">Tell me about it <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner"><p>© 2026 Mark · Built with care and good engineering.</p><div class="footer-links"><a href="mailto:hello@mark.dev">Email</a><a href="https://github.com/" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="#top">Back to top ↑</a></div></div>
+  </footer>
+</body>
+</html>
